@@ -47,4 +47,6 @@ start_link() ->
 init([]) ->
     TimerSrv = {cl_timer_srv, {cl_timer_srv, start_link, []},
                 permanent, 2000, worker, [cl_timer_srv]},
-    {ok, {{one_for_all, 0, 1}, [TimerSrv]}}.
+    Throttler = {cl_throttler, {cl_throttler, start_link, []},
+                permanent, 2000, worker, [cl_throttler]},
+    {ok, {{one_for_all, 0, 1}, [TimerSrv, Throttler]}}.
