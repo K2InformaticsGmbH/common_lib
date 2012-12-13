@@ -20,7 +20,6 @@
         cl_timer,
         cl_timer_srv,
         cl_url,
-        cl_throttler,
         common_lib,
         common_lib_sup
     ]},
